@@ -8,6 +8,8 @@ public class RoleEntity : MonoBehaviour {
 
     [SerializeField] Animator animator;
 
+    public int id;
+
 
     public void Ctor() { }
 
