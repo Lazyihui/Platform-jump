@@ -12,16 +12,52 @@ public class MainClient : MonoBehaviour {
 
         // ====== instantiate ======
         ctx = new Context();
+        ctx.gameContext.gameEntity = GameFactory.Game_Create();
 
+        // =====  Bining =====
+        BindingEvents();
+
+        // =====  Init =====
+        // ==== Enter ====
+        Business_Login.Enter(ctx.gameContext);
     }
 
 
+    void BindingEvents() {
+        BusinessEvents businessEvents = ctx.gameContext.events;
+
+        businessEvents.Login_OnClickStartGameHandle = () => {
+            Business_Game.Enter(ctx.gameContext);
+            Debug.Log("开始游戏");
+        };
+    }
+
     void OnGUI() {
-        Business_Login.ProcessGUI();
+        var game = ctx.gameContext.gameEntity;
+        GameFSMStatus status = game.status;
+
+        if (status == GameFSMStatus.Login) {
+            Business_Login.ProcessGUI(ctx.gameContext);
+        } else if (status == GameFSMStatus.Game){
+            // Business_Game.ProcessGUI(ctx.gameContext);
+        }
+
     }
 
     void Update() {
 
+        float dt = Time.deltaTime;
+
+        var game = ctx.gameContext.gameEntity;
+        GameFSMStatus status = game.status;
+
+        if (status == GameFSMStatus.Login) {
+            Business_Login.Tick(ctx.gameContext, dt);
+        } else if (status == GameFSMStatus.Game) {
+            Business_Game.Tick(ctx.gameContext, dt);
+        }
+
+        
 
     }
 
