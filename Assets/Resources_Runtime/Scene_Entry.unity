@@ -119,6 +119,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &31899596 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 933218681815668242, guid: fcd5d846f3d460748a7ad586b7f91530, type: 3}
+  m_PrefabInstance: {fileID: 5489506647968096021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &31899597 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6393843886149953497, guid: fcd5d846f3d460748a7ad586b7f91530, type: 3}
+  m_PrefabInstance: {fileID: 5489506647968096021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &590067182
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf539478508957141a19b34876578ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1023558471 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 514141932366991447, guid: fcd5d846f3d460748a7ad586b7f91530, type: 3}
+  m_PrefabInstance: {fileID: 5489506647968096021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2004898236
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +412,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3266474597316812614, guid: fcd5d846f3d460748a7ad586b7f91530, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1023558471}
+    - target: {fileID: -3266474597316812614, guid: fcd5d846f3d460748a7ad586b7f91530, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 31899596}
+    - target: {fileID: -3266474597316812614, guid: fcd5d846f3d460748a7ad586b7f91530, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 31899597}
     - target: {fileID: 2414659071547671731, guid: fcd5d846f3d460748a7ad586b7f91530, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
