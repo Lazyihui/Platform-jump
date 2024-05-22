@@ -12,7 +12,6 @@ public static class Business_Login {
 
 
     public static void Tick(GameContext ctx, float dt) {
-        Debug.Log("Business_Login Tick");
     
     }
 

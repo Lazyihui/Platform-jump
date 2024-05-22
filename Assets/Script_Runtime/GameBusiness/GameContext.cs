@@ -4,20 +4,23 @@ public class GameContext {
 
     public RoleRepository roleRepository;
 
-    public int roleID;
 
     // 
     public BusinessEvents events;
 
     public GameEntity gameEntity;
 
+    public AssetsContext assetsContext;
+
+
     
 
     public GameContext() {
         roleRepository = new RoleRepository();
-        roleID = 0;
 
         events = new BusinessEvents();
+        assetsContext = new AssetsContext();
+
 
     }
 

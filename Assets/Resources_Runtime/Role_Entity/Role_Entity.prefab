@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2414659071547671731}
   - component: {fileID: -3266474597316812614}
   m_Layer: 0
-  m_Name: RoleEntity
+  m_Name: Role_Entity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec9ec6c028fe904a92caf5d81ad639a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  sr: {fileID: 0}
-  animator: {fileID: 0}
+  rb: {fileID: 514141932366991447}
+  sr: {fileID: 933218681815668242}
+  animator: {fileID: 6393843886149953497}
+  id: 0
 --- !u!1 &5458080795331133976
 GameObject:
   m_ObjectHideFlags: 0

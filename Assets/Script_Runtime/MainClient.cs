@@ -27,7 +27,7 @@ public class MainClient : MonoBehaviour {
         BusinessEvents businessEvents = ctx.gameContext.events;
 
         businessEvents.Login_OnClickStartGameHandle = () => {
-            Business_Game.Enter(ctx.gameContext);
+            Business_Game.NewGame(ctx.gameContext);
             Debug.Log("开始游戏");
         };
     }

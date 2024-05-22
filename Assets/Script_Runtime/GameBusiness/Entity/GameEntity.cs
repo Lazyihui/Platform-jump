@@ -6,11 +6,13 @@ public class GameEntity {
 
     public GameFSMStatus status;
 
+    public int roleOwnerID;
+
     public float restFixTime; //用于模拟 fixedUpdate使用的
 
-    public GameEntity() { 
+    public GameEntity() {
         restFixTime = 0;
-        
+
     }
 
 }
