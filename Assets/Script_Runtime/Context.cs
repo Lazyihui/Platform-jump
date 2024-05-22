@@ -6,8 +6,11 @@ public class Context {
 
     public GameContext gameContext;
 
+    public AssetsContext assetsContext;
+
     public Context() {
         gameContext = new GameContext();
+        assetsContext = new AssetsContext();
 
     }
 

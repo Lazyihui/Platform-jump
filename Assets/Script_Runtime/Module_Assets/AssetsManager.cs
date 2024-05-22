@@ -9,16 +9,6 @@ public static class ModuleAssets {
 
         {
             AssetLabelReference labelReference = new AssetLabelReference();
-            labelReference.labelString = "Panel";
-            var ptr = Addressables.LoadAssetsAsync<GameObject>(labelReference, null);
-            var list = ptr.WaitForCompletion();
-            foreach (var go in list) {
-                ctx.panels.Add(go.name, go);
-            }
-            ctx.panelsPtr = ptr;
-        }
-        {
-            AssetLabelReference labelReference = new AssetLabelReference();
             labelReference.labelString = "Entity";
             var ptr = Addressables.LoadAssetsAsync<GameObject>(labelReference, null);
             var list = ptr.WaitForCompletion();
@@ -32,9 +22,6 @@ public static class ModuleAssets {
     }
 
     public static void Unload(AssetsContext ctx) {
-        if (ctx.panelsPtr.IsValid()) {
-            Addressables.Release(ctx.panelsPtr);
-        }
         if (ctx.entityPtr.IsValid()) {
             Addressables.Release(ctx.entityPtr);
         }

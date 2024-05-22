@@ -18,6 +18,8 @@ public class MainClient : MonoBehaviour {
         BindingEvents();
 
         // =====  Init =====
+        ModuleAssets.Load(ctx.assetsContext);
+
         // ==== Enter ====
         Business_Login.Enter(ctx.gameContext);
     }
@@ -38,7 +40,7 @@ public class MainClient : MonoBehaviour {
 
         if (status == GameFSMStatus.Login) {
             Business_Login.ProcessGUI(ctx.gameContext);
-        } else if (status == GameFSMStatus.Game){
+        } else if (status == GameFSMStatus.Game) {
             // Business_Game.ProcessGUI(ctx.gameContext);
         }
 
@@ -57,7 +59,7 @@ public class MainClient : MonoBehaviour {
             Business_Game.Tick(ctx.gameContext, dt);
         }
 
-        
+
 
     }
 

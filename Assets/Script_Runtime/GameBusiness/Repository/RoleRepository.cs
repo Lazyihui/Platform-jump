@@ -1,32 +1,46 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class RoleRepository{
+
+public class RoleRespository {
 
     Dictionary<int, RoleEntity> all;
 
-    public RoleRepository(){
+    RoleEntity[] temArray;
+
+    public RoleRespository() {
         all = new Dictionary<int, RoleEntity>();
+        temArray = new RoleEntity[10];
     }
 
-    public void Add(RoleEntity role){
-        all.Add(role.id, role);
+    public void Add(RoleEntity entity) {
+        all.Add(entity.id, entity);
     }
 
-    public bool TryGet(int id, out RoleEntity role){
-        return all.TryGetValue(id, out role);
+    public void Remove(RoleEntity entity) {
+        all.Remove(entity.id);
     }
 
-    public void Remove(int id){
-        all.Remove(id);
+    public int TakeAll(out RoleEntity[] array) {
+        if (all.Count > temArray.Length) {
+            temArray = new RoleEntity[all.Count * 2];
+        }
+        all.Values.CopyTo(temArray, 0);
+
+        array = temArray;
+        return all.Count;
+
     }
 
-    public void Foreach(Action<RoleEntity> action){
-        foreach(var role in all.Values){
-            action(role);
+    public bool TryGet(int id, out RoleEntity entity) {
+        return all.TryGetValue(id, out entity);
+    }
+
+    public void Foreach(Action<RoleEntity> action) {
+        foreach (var item in all.Values) {
+            action(item);
         }
     }
+
 
 }

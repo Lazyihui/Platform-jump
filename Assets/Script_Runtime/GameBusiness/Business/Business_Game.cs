@@ -9,10 +9,12 @@ public static class Business_Game {
         // 改变程序状态
         ctx.gameEntity.status = GameFSMStatus.Game;
         // 初始化游戏数据
-        RoleEntity role = RoleDomain.Spawn(ctx);
-        Debug.Log(role.id);
-        ctx.gameEntity.roleOwnerID = role.id; //记录主角
+        // RoleEntity role = RoleDomain.Spawn(ctx);
+        // Debug.Log(role.id);
+        // ctx.gameEntity.roleOwnerID = role.id; //记录主角
         // 生产数据
+        MstDomain.Spawn(ctx);
+
     }
 
     public static void LoadGame(GameContext ctx) {
