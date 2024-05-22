@@ -22,6 +22,9 @@ public class MainClient : MonoBehaviour {
 
         // ==== Enter ====
         Business_Login.Enter(ctx.gameContext);
+
+        // ==== Inject ====
+        ctx.Inject();
     }
 
 

@@ -13,6 +13,9 @@ public class Context {
         assetsContext = new AssetsContext();
 
     }
-
+    
+    public void Inject(){
+        gameContext.Inject(assetsContext);
+    }
 
 }

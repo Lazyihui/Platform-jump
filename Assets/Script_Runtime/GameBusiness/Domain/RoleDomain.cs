@@ -7,7 +7,7 @@ public static class RoleDomain {
 
     public static RoleEntity Spawn(GameContext ctx) {
 
-        bool has = ctx.assetsContext.TryGetEntity("Entity_Role", out GameObject prefab);
+        bool has = ctx.assetsContext.TryGetEntity("Role_Entity", out GameObject prefab);
         if (!has) {
             Debug.LogError("Entity_Role ==null");
             return null;
@@ -15,7 +15,7 @@ public static class RoleDomain {
         RoleEntity role = GameObject.Instantiate(prefab).GetComponent<RoleEntity>();
         role.Ctor();
 
-        return null;
+        return role;
     }
 
 
