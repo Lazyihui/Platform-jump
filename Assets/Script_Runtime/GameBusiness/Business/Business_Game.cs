@@ -13,6 +13,8 @@ public static class Business_Game {
         ctx.gameEntity.roleOwnerID = role.id; //记录主角
         // 生产数据
 
+        MapDomain.Spawn(ctx, 1);
+
     }
 
     public static void LoadGame(GameContext ctx) {

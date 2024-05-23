@@ -46,6 +46,9 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: f1893d422eb0ca249a7903ee99c2ae46, type: 2}
   - {fileID: 11400000, guid: 32caec72c3aa4f642b2b37abecca75cb, type: 2}
+  - {fileID: 11400000, guid: b584259ff2ceb9c40b36ab1264a09f9e, type: 2}
+  - {fileID: 11400000, guid: 29ce2b03383b4954bbae9db8b895f5ad, type: 2}
+  - {fileID: 11400000, guid: 0548339740bf8eb428d90a49f225930c, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -89,6 +92,7 @@ MonoBehaviour:
     - default
     - Entity
     - Panel
+    - MapGrid
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 3db1686af17841d47b3599a3bc48837c, type: 2}

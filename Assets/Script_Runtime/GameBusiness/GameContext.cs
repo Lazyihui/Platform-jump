@@ -6,6 +6,8 @@ public class GameContext {
 
     public MstRepository mstRepository;
 
+    public MapRepository mapRepository;
+
     // 
     public BusinessEvents events;
 
@@ -21,6 +23,7 @@ public class GameContext {
     public GameContext() {
         roleRepository = new RoleRespository();
         mstRepository = new MstRepository();
+        mapRepository = new MapRepository();
 
         events = new BusinessEvents();
 
@@ -28,7 +31,7 @@ public class GameContext {
     }
 
     public void Inject(AssetsContext assetsContext) {
-        this.assetsContext = assetsContext; 
+        this.assetsContext = assetsContext;
 
 
     }

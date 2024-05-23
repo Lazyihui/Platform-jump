@@ -18,11 +18,23 @@ public static class ModuleAssets {
             ctx.entityPtr = ptr;
 
         }
+        {
+            var op = Addressables.LoadAssetsAsync<GameObject>("MapGrid",null);
+            var list = op.WaitForCompletion();
+            foreach(var go in list){
+                MapGridElement mapGrid = go.GetComponent<MapGridElement>();
+                ctx.mapGrids.Add(mapGrid.stageID, mapGrid);
+            }
+            ctx.mapPtr = op;
+        }
 
     }
 
     public static void Unload(AssetsContext ctx) {
         if (ctx.entityPtr.IsValid()) {
+            Addressables.Release(ctx.entityPtr);
+        }
+        if (ctx.mapPtr.IsValid()) {
             Addressables.Release(ctx.entityPtr);
         }
     }
