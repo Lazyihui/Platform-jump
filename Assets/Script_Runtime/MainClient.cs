@@ -33,7 +33,6 @@ public class MainClient : MonoBehaviour {
 
         businessEvents.Login_OnClickStartGameHandle = () => {
             Business_Game.NewGame(ctx.gameContext);
-            Debug.Log("开始游戏");
         };
     }
 
