@@ -51,6 +51,9 @@ public class MainClient : MonoBehaviour {
     void Update() {
 
         float dt = Time.deltaTime;
+        
+        // ==== Input ====
+        ctx.moduleInput.Tick(dt);
 
         var game = ctx.gameContext.gameEntity;
         GameFSMStatus status = game.status;

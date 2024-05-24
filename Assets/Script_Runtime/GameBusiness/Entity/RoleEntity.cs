@@ -14,4 +14,20 @@ public class RoleEntity : MonoBehaviour {
     public void Ctor() { }
 
 
+    public void Move(Vector2 moveAxis,float speed,float fixdt) {
+
+        Vector2 oldVelocity = rb.velocity;  
+        oldVelocity.x = moveAxis.x * speed;
+        rb.velocity = oldVelocity;
+        // Vector2 moveDir = moveAxis.normalized;
+        // rb.velocity = moveDir * 5;
+        // if (moveDir.x > 0) {
+        //     sr.flipX = false;
+        // } else if (moveDir.x < 0) {
+        //     sr.flipX = true;
+        // }
+        // animator.SetFloat("Speed", moveDir.magnitude);
+    }
+
+
 }

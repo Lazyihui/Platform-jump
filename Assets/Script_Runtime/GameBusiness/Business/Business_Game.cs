@@ -51,7 +51,17 @@ public static class Business_Game {
 
     static void PreUpdate(GameContext ctx, float dt) { }
 
-    static void LogicFixUpdate(GameContext ctx, float dt) { }
+    static void LogicFixUpdate(GameContext ctx, float dt) { 
+        //  逻辑
+        var input = ctx.moduleInput;
+
+        // for role
+        ctx.roleRepository.Foreach((RoleEntity role) => {
+            if (role.id == ctx.gameEntity.roleOwnerID) {
+                RoleDomain.Move(ctx,role, dt);
+            }
+        });
+    }
 
     static void LateUpdate(GameContext ctx, float dt) { }
 

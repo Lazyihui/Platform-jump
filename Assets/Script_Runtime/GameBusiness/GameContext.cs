@@ -15,6 +15,7 @@ public class GameContext {
 
     public AssetsContext assetsContext;
 
+    public ModuleInput moduleInput;
 
 
 
@@ -30,8 +31,9 @@ public class GameContext {
 
     }
 
-    public void Inject(AssetsContext assetsContext) {
+    public void Inject(AssetsContext assetsContext,ModuleInput moduleInput) {
         this.assetsContext = assetsContext;
+        this.moduleInput = moduleInput;
 
 
     }

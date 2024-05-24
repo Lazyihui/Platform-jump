@@ -18,4 +18,11 @@ public static class RoleDomain {
     public static void UnSpawn(GameContext ctx, int id) {
 
     }
+
+    public static void Move(GameContext ctx,RoleEntity role,float fixdt) {
+
+        var input = ctx.moduleInput;
+        role.Move(input.moveAxis, 5, fixdt);
+
+    }
 }
