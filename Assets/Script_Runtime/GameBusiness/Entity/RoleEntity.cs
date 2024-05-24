@@ -14,9 +14,9 @@ public class RoleEntity : MonoBehaviour {
     public void Ctor() { }
 
 
-    public void Move(Vector2 moveAxis,float speed,float fixdt) {
+    public void Move(Vector2 moveAxis, float speed, float fixdt) {
 
-        Vector2 oldVelocity = rb.velocity;  
+        Vector2 oldVelocity = rb.velocity;
         oldVelocity.x = moveAxis.x * speed;
         rb.velocity = oldVelocity;
         // Vector2 moveDir = moveAxis.normalized;
@@ -29,5 +29,14 @@ public class RoleEntity : MonoBehaviour {
         // animator.SetFloat("Speed", moveDir.magnitude);
     }
 
+    public void Falling(float fallingSpeed, float fallingSpeedMax, float fixdt) {
 
+        Vector2 oldVelocity = rb.velocity;
+        oldVelocity.y -= fallingSpeed * fixdt;
+        if (oldVelocity.y < -fallingSpeedMax) {
+            oldVelocity.y = -fallingSpeedMax;
+        }
+        rb.velocity = oldVelocity;
+
+    }
 }
