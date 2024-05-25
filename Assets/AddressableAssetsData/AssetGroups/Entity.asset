@@ -23,12 +23,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Entity
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d556501844232c141bb2f2a8afe11d1e
-    m_Address: Mst_Entity
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Entity
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 429ac9eca7c9ab94e8e1c3db37e0e865
     m_Address: MapEntity
     m_ReadOnly: 0
