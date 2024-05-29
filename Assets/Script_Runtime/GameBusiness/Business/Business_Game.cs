@@ -10,6 +10,7 @@ public static class Business_Game {
         ctx.gameEntity.status = GameFSMStatus.Game;
         // 初始化游戏数据
         RoleEntity role = RoleDomain.Spawn(ctx);
+        role.SetPos(new Vector2(0, 10));
         ctx.gameEntity.roleOwnerID = role.id; //记录主角
         // 生产数据
 
@@ -51,18 +52,20 @@ public static class Business_Game {
 
     static void PreUpdate(GameContext ctx, float dt) { }
 
-    static void LogicFixUpdate(GameContext ctx, float dt) { 
+    static void LogicFixUpdate(GameContext ctx, float dt) {
         //  逻辑
         var input = ctx.moduleInput;
 
         // for role
         ctx.roleRepository.Foreach((RoleEntity role) => {
             if (role.id == ctx.gameEntity.roleOwnerID) {
-                RoleDomain.MoveByOwnerInput(ctx,role, dt);
-                RoleDomain.JumpByOwnerInput(ctx,role, dt);
-                RoleDomain.Falling(ctx,role, dt);
+                RoleDomain.MoveByOwnerInput(ctx, role, dt);
+                RoleDomain.JumpByOwnerInput(ctx, role, dt);
+                RoleDomain.GroundCheck(ctx, role);
+                RoleDomain.Falling(ctx, role, dt);
             }
         });
+        // Physics2D.Simulate(dt);
     }
 
     static void LateUpdate(GameContext ctx, float dt) { }

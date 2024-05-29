@@ -10,9 +10,21 @@ public class RoleEntity : MonoBehaviour {
     [SerializeField] Animator animator;
 
     public int id;
-    public int allowJumpTimes ;
+    public int allowJumpTimes;
 
     public void Ctor() { }
+
+    public Vector2 Pos() {
+        return Body.position;
+    }
+
+    public void SetPos(Vector2 pos) {
+        Body.position = pos;
+    }
+
+    public Vector2 Velocity() {
+        return rb.velocity;
+    }
 
 
     public void Move(Vector2 moveAxis, float speed, float fixdt) {
@@ -61,7 +73,9 @@ public class RoleEntity : MonoBehaviour {
 
     public void Jump(float jumpAxis, float jumpForce, float fixdt) {
 
-        if (!AllowJump()) { }
+        if (!AllowJump()) {
+            return;
+        }
 
 
         if (jumpAxis != 0) {
@@ -69,11 +83,15 @@ public class RoleEntity : MonoBehaviour {
             oldVelocity.y = jumpForce;
             rb.velocity = oldVelocity;
             // 减少跳跃次数
-            allowJumpTimes--;
+            allowJumpTimes -= 1;
+
         }
 
     }
 
+    public void EnterGround() {
+        allowJumpTimes = 2;
+    }
 
     bool AllowJump() {
         return allowJumpTimes > 0;
