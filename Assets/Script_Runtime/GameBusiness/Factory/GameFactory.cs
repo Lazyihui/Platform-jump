@@ -19,6 +19,7 @@ public static class GameFactory {
         }
         RoleEntity role = GameObject.Instantiate(prefab).GetComponent<RoleEntity>();
         role.Ctor();
+        role.allowJumpTimes = 2;
 
         return role;
     }
@@ -31,7 +32,7 @@ public static class GameFactory {
             return null;
         }
         MapEntity map = GameObject.Instantiate(prefab).GetComponent<MapEntity>();
-        if(map==null){
+        if (map == null) {
             Debug.LogError("MapEntity ==null");
             return null;
         }

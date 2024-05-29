@@ -58,7 +58,8 @@ public static class Business_Game {
         // for role
         ctx.roleRepository.Foreach((RoleEntity role) => {
             if (role.id == ctx.gameEntity.roleOwnerID) {
-                RoleDomain.Move(ctx,role, dt);
+                RoleDomain.MoveByOwnerInput(ctx,role, dt);
+                RoleDomain.JumpByOwnerInput(ctx,role, dt);
                 RoleDomain.Falling(ctx,role, dt);
             }
         });
